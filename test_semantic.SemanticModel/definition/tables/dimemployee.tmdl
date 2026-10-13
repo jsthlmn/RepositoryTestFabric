@@ -1,0 +1,59 @@
+table dimemployee
+	lineageTag: 93826d84-3171-41c6-8f12-0907f65fda7a
+	sourceLineageTag: [test_schema].[dimemployee]
+
+	column EmployeeID
+		dataType: int64
+		formatString: 0
+		lineageTag: 73a4689a-f219-4215-8bc5-227e82fd9f01
+		sourceLineageTag: EmployeeID
+		summarizeBy: count
+		sourceColumn: EmployeeID
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmployeeName
+		dataType: string
+		lineageTag: 5f7f8b06-218f-4497-9205-c2dc5e18dcff
+		sourceLineageTag: EmployeeName
+		summarizeBy: none
+		sourceColumn: EmployeeName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		lineageTag: 4c3aad18-cef7-477d-9c6d-e44fca5b149d
+		sourceLineageTag: Department
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column Salary
+		dataType: int64
+		formatString: 0
+		lineageTag: 90fb4dfa-7a29-44a3-bdf5-e217488d2cf3
+		sourceLineageTag: Salary
+		summarizeBy: sum
+		sourceColumn: Salary
+
+		annotation SummarizationSetBy = Automatic
+
+	column LoadTimeStamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0e4a7e5d-5527-40ae-ae16-65fc690c15c7
+		sourceLineageTag: LoadTimeStamp
+		summarizeBy: none
+		sourceColumn: LoadTimeStamp
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimemployee = entity
+		mode: directLake
+		source
+			entityName: dimemployee
+			schemaName: test_schema
+			expressionSource: 'DirectLake - DEV_LH_Hilman'
+
