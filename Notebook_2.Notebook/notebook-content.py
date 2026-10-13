@@ -107,3 +107,14 @@ spark.sql("SELECT * FROM test_schema.DimEmployee").show(truncate=False)
 # META   "language": "python",
 # META   "language_group": "synapse_pyspark"
 # META }
+
+# CELL ********************
+
+# test4
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
