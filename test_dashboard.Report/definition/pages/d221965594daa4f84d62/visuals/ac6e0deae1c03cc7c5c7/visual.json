@@ -1,0 +1,122 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "ac6e0deae1c03cc7c5c7",
+  "position": {
+    "x": 10,
+    "y": 0,
+    "z": 0,
+    "height": 280,
+    "width": 280,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimemployee"
+                    }
+                  },
+                  "Property": "Department"
+                }
+              },
+              "queryRef": "dimemployee.Department",
+              "nativeQueryRef": "Department"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dimemployee"
+                        }
+                      },
+                      "Property": "EmployeeID"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(dimemployee.EmployeeID)",
+              "nativeQueryRef": "Count of EmployeeID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimemployee"
+                    }
+                  },
+                  "Property": "EmployeeName"
+                }
+              },
+              "queryRef": "dimemployee.EmployeeName",
+              "nativeQueryRef": "EmployeeName"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "065b2e2379a5ac47258b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dimemployee"
+              }
+            },
+            "Property": "Department"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6c80a93f721dbace1c7d",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dimemployee"
+                  }
+                },
+                "Property": "EmployeeID"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "bdb9104a0ca600b48438",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dimemployee"
+              }
+            },
+            "Property": "EmployeeName"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}
